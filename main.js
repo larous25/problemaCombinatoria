@@ -14,7 +14,7 @@ const getAllSubsets = theArray => theArray.reduce(
             subsets.map(set => [value,...set])
     ),
     [[]]
-);
+)
 
 // consigue el array del tablero o sea todas las casillas del trablero
 function conseguirUnaCombinacion (vectorCombinacion, a) {
@@ -45,7 +45,7 @@ function conseguirTodasLasCombinaciones(partes, a) {
     let combinaciones = []
 
     for (let indexPotencia = 0; indexPotencia < partes.length; indexPotencia++) {        
-        const vectorCombinacion = partes[indexPotencia];
+        const vectorCombinacion = partes[indexPotencia]
         combinaciones.push(conseguirUnaCombinacion(vectorCombinacion, a))
     }
 
@@ -53,19 +53,19 @@ function conseguirTodasLasCombinaciones(partes, a) {
 }
 
 function multiDimensionalUnique(arr) {
-    var uniques = [];
-    var itemsFound = {};
+    var uniques = []
+    var itemsFound = {}
     for(var i = 0, l = arr.length; i < l; i++) {
-        var stringified = JSON.stringify(arr[i]);
+        var stringified = JSON.stringify(arr[i])
         if(itemsFound[stringified]) {
             console.log(arr[i])
-            continue; 
+            continue
         }
 
-        uniques.push(arr[i]);
-        itemsFound[stringified] = true;
+        uniques.push(arr[i])
+        itemsFound[stringified] = true
     }
-    return uniques;
+    return uniques
 }
 
 
@@ -110,13 +110,13 @@ function crearTablero () {
 
 
     document.querySelector('#anterior').addEventListener('click', () => {
-        combinacionAPintar--;
+        combinacionAPintar--
         mensajeCombinacionElement.innerHTML = (combinacionAPintar+1) 
         pintarCombinacion(todasLasCombinaciones[combinacionAPintar])
     })
 
     document.querySelector('#siguiente').addEventListener('click', () => {
-        combinacionAPintar++;
+        combinacionAPintar++
         mensajeCombinacionElement.innerHTML = (combinacionAPintar+1)
         pintarCombinacion(todasLasCombinaciones[combinacionAPintar])
     })
@@ -133,11 +133,11 @@ function pintarCombinacion(combinacionAPintar) {
     let con = 0;
     for (let i = 0; i < combinacionAPintar.length; i++) {
         for (let j = 0; j < combinacionAPintar[i].length; j++) {
-            if(combinacionAPintar[i][j] == 1) {
-                let s = ``;
-                divs[con].style.background = '#F24B6A';
-            }
-            con++;
+            if(combinacionAPintar[i][j] == 1) 
+                divs[con].style.background = '#F24B6A'
+            
+
+            con++
         }
     }
 }
